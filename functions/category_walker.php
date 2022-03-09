@@ -89,17 +89,18 @@ class wpsb84532_category_walker extends Walker {
                 '<div class="' . $inner_class . '" data-term-id=' . $category->term_id .
                 ' tabindex="0" role="checkbox" aria-checked="' . $aria_checked . '">' .
                 /** This filter is documented in wp-includes/category-template.php */
-                esc_html( apply_filters( 'the_category', $category->name, '', '' ) ) . '</div>';
+                esc_html( apply_filters( 'the_category', $category->name, '', '' ) );
         } else {
             $is_selected = in_array( $category->term_id, $args['selected_cats'], true );
             $is_disabled = ! empty( $args['disabled'] );
  
             $output .= "\n<div style='margin-left:".$depth."em;' id='{$taxonomy}-{$category->term_id}'$class>" .
-                '<label class="selectit"><input value="' . $category->term_id . '" type="checkbox" name="' . $name . '[]" id="in-' . $taxonomy . '-' . $category->term_id . '"' .
+                '<label class="selectit">
+                <input value="' . $category->term_id . '" type="checkbox" name="' . $name . '[]" id="in-' . $taxonomy . '-' . $category->term_id . '"' .
                 checked( $is_selected, true, false ) .
                 disabled( $is_disabled, true, false ) . ' /> ' .
                 /** This filter is documented in wp-includes/category-template.php */
-                esc_html( apply_filters( 'the_category', $category->name, '', '' ) ) . '</label>';
+                esc_html( apply_filters( 'the_category', $category->name, '', '' ) ) . '</label></div>';
         }
     }
  
@@ -117,6 +118,6 @@ class wpsb84532_category_walker extends Walker {
      * @param array   $args        An array of arguments. @see wp_terms_checklist()
      */
     public function end_el( &$output, $data_object, $depth = 0, $args = array() ) {
-        $output .= "</div>\n";
+        // $output .= "</div>\n";
     }
 }
