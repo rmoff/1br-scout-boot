@@ -27,14 +27,13 @@ function wpsb84532_create_metabox()
   $categories = get_post_meta($post->ID, 'sidebar_categories', true);
 
   $walker = new wpsb84532_category_walker();
-  $category_dropdown=wp_dropdown_categories(array( 'echo'=>0, 'walker'=>$walker, 'hierarchical'=>1 ));
   // Output the field
   echo '
     <label for="recent_posts_visible">Recent posts visible in sidebar </label>
     <input type="checkbox" name="recent_posts_visible" id="recent_posts_visible" '.($sidebar_active?"checked":"").' />
-    <label for="recent_posts_categories">Categories to display in recent posts</label>
-    '.$category_dropdown. '
-  ';
+    // <label for="recent_posts_categories">Categories to display in recent posts</label>
+    ';
+  wp_dropdown_checkbox($walker);
 }
 
 function wpsb84532_save_meta($post_id){
