@@ -28,14 +28,18 @@ function wpsb84532_create_metabox()
 
   $myWalker = new wpsb84532_category_walker();
   print_r($myWalker);
-  echo($myWalker instanceof Walker);
+  if($myWalker instanceof Walker){
+    echo "true"
+  }else{
+    echo "false"
+  }
   // Output the field
   echo '
     <label for="recent_posts_visible">Recent posts visible in sidebar </label>
     <input type="checkbox" name="recent_posts_visible" id="recent_posts_visible" '.($sidebar_active?"checked":"").' />
     // <label for="recent_posts_categories">Categories to display in recent posts</label>
     ';
-  wp_terms_checklist(array("walker"=>$myWalker));
+  wp_terms_checklist(0, array("walker"=>$myWalker));
 }
 
 function wpsb84532_save_meta($post_id){
