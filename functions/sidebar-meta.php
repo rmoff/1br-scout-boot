@@ -33,7 +33,7 @@ function wpsb84532_create_metabox()
     <input type="checkbox" name="recent_posts_visible" id="recent_posts_visible" '.($sidebar_active?"checked":"").' />
     // <label for="recent_posts_categories">Categories to display in recent posts</label>
     ';
-  wp_dropdown_checkbox($walker);
+  wp_category_checklist($walker);
 }
 
 function wpsb84532_save_meta($post_id){
