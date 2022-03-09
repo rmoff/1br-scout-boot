@@ -28,7 +28,7 @@ function wpsb84532_create_metabox()
 
   $myWalker = new wpsb84532_category_walker();
   print_r($myWalker);
-  print_r($myWalker instanceof Walker);
+  echo($myWalker instanceof Walker);
   // Output the field
   echo '
     <label for="recent_posts_visible">Recent posts visible in sidebar </label>
