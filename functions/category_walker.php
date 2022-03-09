@@ -19,8 +19,8 @@ class wpsb84532_category_walker extends Walker {
      * @param array  $args   An array of arguments. @see wp_terms_checklist()
      */
     public function start_lvl( &$output, $depth = 0, $args = array() ) {
-        $indent  = str_repeat( "\t", $depth+1 );
-        $output .= "$indent<ul class='children ml-$depth'>\n";
+        // $indent  = str_repeat( "\t", $depth+1 );
+        // $output .= "$indent<ul class='children ml-$depth'>\n";
     }
  
     /**
@@ -35,8 +35,8 @@ class wpsb84532_category_walker extends Walker {
      * @param array  $args   An array of arguments. @see wp_terms_checklist()
      */
     public function end_lvl( &$output, $depth = 0, $args = array() ) {
-        $indent  = str_repeat( "\t", $depth );
-        $output .= "$indent</ul>\n";
+        // $indent  = str_repeat( "\t", $depth );
+        // $output .= "$indent</ul>\n";
     }
  
     /**
@@ -85,7 +85,7 @@ class wpsb84532_category_walker extends Walker {
                 $aria_checked = 'true';
             }
  
-            $output .= "\n" . '<li' . $class . '>' .
+            $output .= "\n" .
                 '<div class="' . $inner_class . '" data-term-id=' . $category->term_id .
                 ' tabindex="0" role="checkbox" aria-checked="' . $aria_checked . '">' .
                 /** This filter is documented in wp-includes/category-template.php */
@@ -94,7 +94,7 @@ class wpsb84532_category_walker extends Walker {
             $is_selected = in_array( $category->term_id, $args['selected_cats'], true );
             $is_disabled = ! empty( $args['disabled'] );
  
-            $output .= "\n<li id='{$taxonomy}-{$category->term_id}'$class>" .
+            $output .= "\n<div class='ml-".$depth."' id='{$taxonomy}-{$category->term_id}'$class>" .
                 '<label class="selectit"><input value="' . $category->term_id . '" type="checkbox" name="' . $name . '[]" id="in-' . $taxonomy . '-' . $category->term_id . '"' .
                 checked( $is_selected, true, false ) .
                 disabled( $is_disabled, true, false ) . ' /> ' .
@@ -117,6 +117,6 @@ class wpsb84532_category_walker extends Walker {
      * @param array   $args        An array of arguments. @see wp_terms_checklist()
      */
     public function end_el( &$output, $data_object, $depth = 0, $args = array() ) {
-        $output .= "</li>\n";
+        // $output .= "</li>\n";
     }
 }
