@@ -27,6 +27,7 @@ function wpsb84532_create_metabox()
   $categories = get_post_meta($post->ID, 'sidebar_categories', true);
 
   $myWalker = new wpsb84532_category_walker();
+  print_r($myWalker);
   // Output the field
   echo '
     <label for="recent_posts_visible">Recent posts visible in sidebar </label>
