@@ -29,9 +29,9 @@ function wpsb84532_create_metabox()
   $myWalker = new wpsb84532_category_walker();
   print_r($myWalker);
   if($myWalker instanceof Walker){
-    echo "true"
+    echo "true";
   }else{
-    echo "false"
+    echo "false";
   }
   // Output the field
   echo '
