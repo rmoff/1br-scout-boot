@@ -22,11 +22,9 @@ function limit_posts_in_sidebar_to_chosen_categories($query)
 <div id="sidebar" class="sidebar col-lg-4 d-none d-lg-block" role="navigation">
 	<?php
 		add_action('pre_get_posts', 'limit_posts_in_sidebar_to_chosen_categories');
-		print_r($GLOBALS['wp_filter']);
 		b4st_sidebar_before();
 		dynamic_sidebar('sidebar-widget-area');
 		b4st_sidebar_after();
-		remove_action('pre_get_posts', 'limit_posts_in_sidebar_to_chosen_categories');
 	?>
 </div>
 <?php endif; ?>
