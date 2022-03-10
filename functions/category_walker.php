@@ -100,7 +100,7 @@ class wpsb84532_category_walker extends Walker {
                 checked( $is_selected, true, false ) .
                 disabled( $is_disabled, true, false ) . ' > ' .
                 /** This filter is documented in wp-includes/category-template.php */
-                esc_html( apply_filters( 'the_category', $category->name, '', '' ) ) . '</input></label>';
+                esc_html( apply_filters( 'the_category', $category->name, '', '' ) ) . ' </input></label>';
         }
     }
  
