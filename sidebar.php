@@ -7,13 +7,22 @@
  *
  * (So, you don't need to set the main column to col-sm-8 or whatever.)
  */
+function limit_posts_in_sidebar_to_chosen_categories($query)
+{
+	$allowed_categories=get_post_meta($post->ID, 'sidebar_categories', true);
+	$query->query_vars['slug'] = $allowed_categories;
+	$query->include = $allowed_categories;
+	return $query;
+}
 ?>
 
 <?php if( is_active_sidebar('sidebar-widget-area') ): ?>
 <div id="sidebar" class="sidebar col-lg-4 d-none d-lg-block" role="navigation">
 	<?php
 		b4st_sidebar_before();
+		add_action('pre_get_posts', 'limit_posts_in_sidebar_to_chosen_categories');
 		dynamic_sidebar('sidebar-widget-area');
+		remove_action('pre_get_posts', 'limit_posts_in_sidebar_to_chosen_categories');
 		b4st_sidebar_after();
 	?>
 </div>
