@@ -96,7 +96,7 @@ class wpsb84532_category_walker extends Walker {
  
             $output .= "\n<div style='margin-left:1em;' id='{$taxonomy}-{$category->term_id}'$class>" .
                 '<label class="selectit">
-                <input value="' . $category->term_id . '" type="checkbox" name="' . $name . '[]" id="in-' . $taxonomy . '-' . $category->term_id . '"' .
+                <input value="' . $category->term_id . '" type="checkbox" name="sidebar_categories[]" id="in-' . $taxonomy . '-' . $category->term_id . '"' .
                 checked( $is_selected, true, false ) .
                 disabled( $is_disabled, true, false ) . ' > ' .
                 /** This filter is documented in wp-includes/category-template.php */

@@ -37,8 +37,8 @@ function wpsb84532_create_metabox()
 
 function wpsb84532_save_meta($post_id){
   print_r($_POST);
-  if($_POST['formfield']){
-    update_post_meta($post_id,'metakey',$_POST['formfield']);
+  if($_POST['sidebar_categories']){
+    update_post_meta($post_id,'sidebar_categories',$_POST['sidebar_categories']);
   }
 }
 add_action('save_post', 'wpsb84532_save_meta');
