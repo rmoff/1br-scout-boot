@@ -15,7 +15,7 @@
 		b4st_sidebar_before();
 		$post=get_post();
 		echo "checking post attributes";
-		echo get_post_meta($post->ID, 'sidebar_categories', true);
+		echo print_r(get_post_meta($post->ID, 'sidebar_categories', true),true);
 		if (get_post_meta($post->ID, 'recent_posts_visible', true)==1){
 			$posts=get_posts(array(  'numberposts' => 10,
 							  'post_type'   => 'post',
