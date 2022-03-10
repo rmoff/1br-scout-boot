@@ -25,10 +25,13 @@
 				<H1>Recent Posts</H1>
 				<?php
 				foreach ($posts as $post){
+					$excerpt = get_the_excerpt($post);
+					$excerpt = substr($excerpt, 0, 100);
+					$result = substr($excerpt, 0, strrpos($excerpt, ' '));
 					?>
 					<div class="card my-1 p-2">
 					<p><a href=<?php echo '"'.get_permalink($post).'"'; ?>><?php echo $post->post_title;  ?></a></br>
-					<?php echo get_the_excerpt($post); ?> <a href=<?php echo '"'.get_permalink($post).'"'; ?>>Read more</a></p>
+					<?php echo $result; ?> <a href=<?php echo '"'.get_permalink($post).'"'; ?>>Read more</a></p>
 					</div>
 					<?php
 				}
