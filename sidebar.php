@@ -9,6 +9,7 @@
  */
 function limit_posts_in_sidebar_to_chosen_categories($query)
 {
+	$post=get_post();
 	$allowed_categories=get_post_meta($post->ID, 'sidebar_categories', true);
 	print_r($allowed_categories);
 	$query->query_vars['category__in']=$allowed_categories;
