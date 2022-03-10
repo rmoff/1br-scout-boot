@@ -16,7 +16,7 @@
 		$post=get_post();
 		echo "checking post attributes";
 		echo get_post_meta($post->ID, 'recent_posts_visible', true);
-		if (get_post_meta($post->ID, 'recent_posts_visible', true)){
+		if (get_post_meta($post->ID, 'recent_posts_visible', true)==1){
 			$posts=get_posts(array(  'numberposts' => 10,
 							  'post_type'   => 'post',
 							  'category'   => get_post_meta($post->ID, 'sidebar_categories', [])
