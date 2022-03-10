@@ -36,6 +36,7 @@ function wpsb84532_create_metabox()
 }
 
 function wpsb84532_save_meta($post_id){
+  print_r($_POST);
   if($_POST['formfield']){
     update_post_meta($post_id,'metakey',$_POST['formfield']);
   }
