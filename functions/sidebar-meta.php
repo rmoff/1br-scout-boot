@@ -6,14 +6,16 @@ add_action('add_meta_boxes', 'wpsb84532_add_metabox');
 
 function wpsb84532_add_metabox($post)
 {
-  add_meta_box(
-    'wpsb84532_create_metabox',
-    __( 'Sidebar Settings' ),
-    'wpsb84532_create_metabox',
-    'page',
-    'side',
-    'core'
-  );
+  if ($post->page_template == "default"){
+    add_meta_box(
+      'wpsb84532_create_metabox',
+      __( 'Sidebar Settings' ),
+      'wpsb84532_create_metabox',
+      'page',
+      'side',
+      'core'
+    );
+  }
 }
 function wpsb84532_create_metabox()
 {
