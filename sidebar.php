@@ -23,7 +23,7 @@
 							));
 			foreach ($posts as $post){
 				?>
-				<h2><?php $post->post_title  ?></h2>
+				<h2><?php $post->title  ?></h2>
 				<?php
 			}
 		}
