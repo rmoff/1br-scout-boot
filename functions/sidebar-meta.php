@@ -6,7 +6,6 @@ add_action('add_meta_boxes', 'wpsb84532_add_metabox');
 
 function wpsb84532_add_metabox($post)
 {
-  if ($post->page_template == ""){
     add_meta_box(
       'wpsb84532_create_metabox',
       __( 'Sidebar Settings' ),
@@ -15,7 +14,6 @@ function wpsb84532_add_metabox($post)
       'side',
       'core'
     );
-  }
 }
 function wpsb84532_create_metabox()
 {
