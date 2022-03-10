@@ -10,8 +10,8 @@
 function limit_posts_in_sidebar_to_chosen_categories($query)
 {
 	$allowed_categories= implode(",",get_post_meta($post->ID, 'sidebar_categories', true));
-	$query->query_vars['cat'] =$allowed_categories;
-	$query->include = $allowed_categories;
+	$query->query_vars['cat']=$allowed_categories;
+	// $query->include = $allowed_categories;
 	return $query;
 }
 ?>
