@@ -22,9 +22,10 @@
 							));
 			foreach ($posts as $post){
 				?>
+				<div class="card">
 				<p><a href=<?php echo '"'.get_permalink($post).'"'; ?>><?php echo $post->post_title;  ?></a></br>
 				<?php echo get_the_excerpt($post); ?> <a href=<?php echo '"'.get_permalink($post).'"'; ?>>Read more</a></p>
-				</hr>
+				</div>
 				<?php
 			}
 		}
