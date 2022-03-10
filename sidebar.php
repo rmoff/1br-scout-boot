@@ -23,7 +23,9 @@
 							));
 			foreach ($posts as $post){
 				?>
-				<h2><?php echo print_r($post,true);  ?></h2>
+				<a href=<?php echo '"'.get_permalink($post->post_url).'"' ?>><p><?php echo $post->post_title  ?></p></a>
+				<p><?php get_the_excerpt($post) ?></p><a href=<?php echo '"'.get_permalink($post->post_url).'"' ?>><p>Read more</p></a>
+				</hr>
 				<?php
 			}
 		}
