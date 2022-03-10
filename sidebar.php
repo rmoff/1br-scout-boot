@@ -23,7 +23,7 @@
 							));
 			foreach ($posts as $post){
 				?>
-				<h2><?php print_r($post,true);  ?></h2>
+				<h2><?php echo print_r($post,true);  ?></h2>
 				<?php
 			}
 		}
