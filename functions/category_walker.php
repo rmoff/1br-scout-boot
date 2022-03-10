@@ -94,13 +94,13 @@ class wpsb84532_category_walker extends Walker {
             $is_selected = in_array( $category->term_id, $args['selected_cats'], true );
             $is_disabled = ! empty( $args['disabled'] );
  
-            $output .= "\n<div style='margin-left:".$depth."em;' id='{$taxonomy}-{$category->term_id}'$class>" .
+            $output .= "\n<div style='margin-left:1em;' id='{$taxonomy}-{$category->term_id}'$class>" .
                 '<label class="selectit">
                 <input value="' . $category->term_id . '" type="checkbox" name="' . $name . '[]" id="in-' . $taxonomy . '-' . $category->term_id . '"' .
                 checked( $is_selected, true, false ) .
                 disabled( $is_disabled, true, false ) . ' > ' .
                 /** This filter is documented in wp-includes/category-template.php */
-                esc_html( apply_filters( 'the_category', $category->name, '', '' ) ) . '</input></label></div>';
+                esc_html( apply_filters( 'the_category', $category->name, '', '' ) ) . '</input></label>';
         }
     }
  
@@ -118,6 +118,6 @@ class wpsb84532_category_walker extends Walker {
      * @param array   $args        An array of arguments. @see wp_terms_checklist()
      */
     public function end_el( &$output, $data_object, $depth = 0, $args = array() ) {
-        // $output .= "</div>\n";
+        $output .= "</div>\n";
     }
 }
