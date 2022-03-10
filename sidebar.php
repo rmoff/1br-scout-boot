@@ -26,7 +26,7 @@
 				<?php
 				foreach ($posts as $post){
 					?>
-					<div class="card">
+					<div class="card p-1">
 					<p><a href=<?php echo '"'.get_permalink($post).'"'; ?>><?php echo $post->post_title;  ?></a></br>
 					<?php echo get_the_excerpt($post); ?> <a href=<?php echo '"'.get_permalink($post).'"'; ?>>Read more</a></p>
 					</div>
