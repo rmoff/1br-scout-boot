@@ -13,30 +13,7 @@
 <div id="sidebar" class="sidebar col-lg-4 d-none d-lg-block" role="navigation">
 	<?php
 		b4st_sidebar_before();
-		$post=get_post();
 		dynamic_sidebar('sidebar-widget-area');
-		if (get_post_meta($post->ID, 'recent_posts_visible', true)==1){
-			$posts=get_posts(array(  'numberposts' => 10,
-							  'post_type'   => 'post',
-							  'category'   => implode(",",get_post_meta($post->ID, 'sidebar_categories', true))
-							));
-			?> 
-			<div class="card p-2">
-				<H1>Recent Posts</H1>
-				<?php
-				foreach ($posts as $post){
-					$excerpt = get_the_excerpt($post);
-					$excerpt = substr($excerpt, 0, 100);
-					$result = substr($excerpt, 0, strrpos($excerpt, ' '));
-					?>
-					<div class="card my-1 p-2">
-					<p><a href=<?php echo '"'.get_permalink($post).'"'; ?>><?php echo $post->post_title;  ?></a></br>
-					<?php echo $result; ?> <a href=<?php echo '"'.get_permalink($post).'"'; ?>>Read more</a></p>
-					</div>
-					<?php
-				}
-			?> </div> <?php
-		}
 		b4st_sidebar_after();
 	?>
 </div>
