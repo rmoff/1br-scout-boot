@@ -20,14 +20,19 @@
 							  'post_type'   => 'post',
 							  'category'   => implode(",",get_post_meta($post->ID, 'sidebar_categories', true))
 							));
-			foreach ($posts as $post){
-				?>
-				<div class="card">
-				<p><a href=<?php echo '"'.get_permalink($post).'"'; ?>><?php echo $post->post_title;  ?></a></br>
-				<?php echo get_the_excerpt($post); ?> <a href=<?php echo '"'.get_permalink($post).'"'; ?>>Read more</a></p>
-				</div>
+			?> 
+			<div class="card">
+				<H1>Recent Posts</H1>
 				<?php
-			}
+				foreach ($posts as $post){
+					?>
+					<div class="card">
+					<p><a href=<?php echo '"'.get_permalink($post).'"'; ?>><?php echo $post->post_title;  ?></a></br>
+					<?php echo get_the_excerpt($post); ?> <a href=<?php echo '"'.get_permalink($post).'"'; ?>>Read more</a></p>
+					</div>
+					<?php
+				}
+			?> </div> <?php
 		}
 		b4st_sidebar_after();
 	?>
