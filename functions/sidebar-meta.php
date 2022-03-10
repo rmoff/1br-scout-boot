@@ -36,9 +36,7 @@ function wpsb84532_create_metabox()
 }
 
 function wpsb84532_save_meta($post_id){
-  if($_POST['recent_posts_visible']){
-    update_post_meta($post_id,'recent_posts_visible',$_POST['recent_posts_visible']);
-  }
+  update_post_meta($post_id,'recent_posts_visible',$_POST['recent_posts_visible']?true:false);
   if($_POST['sidebar_categories']){
     update_post_meta($post_id,'sidebar_categories',$_POST['sidebar_categories']);
   }
