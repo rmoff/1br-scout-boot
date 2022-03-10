@@ -24,7 +24,7 @@ function wpsb84532_create_metabox()
 
   // Get the location data if it's already been entered
   $recent_posts_visible = get_post_meta($post->ID, 'recent_posts_visible', true);
-  $categories = get_post_meta($post->ID, 'sidebar_categories', true);
+  $selected_categories = get_post_meta($post->ID, 'sidebar_categories', true);
 
   $myWalker = new wpsb84532_category_walker();
   // Output the field
@@ -32,7 +32,7 @@ function wpsb84532_create_metabox()
     <input type="checkbox" name="recent_posts_visible" id="recent_posts_visible" '.($recent_posts_visible?"checked":"").' />
     <label for="recent_posts_visible">Recent posts visible in sidebar </label>
     <label for="recent_posts_categories">Categories to display in recent posts:</label>
-    <div class="ml-1">'.wp_terms_checklist(0, array("walker"=>$myWalker, "echo"=>0)).'</div>';
+    <div class="ml-1">'.wp_terms_checklist(0, array("walker"=>$myWalker, "echo"=>0, "selected_cats"=$selected_categories>)).'</div>';
 }
 
 function wpsb84532_save_meta($post_id){
