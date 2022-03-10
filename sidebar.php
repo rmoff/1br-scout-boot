@@ -13,6 +13,7 @@
 <div id="sidebar" class="sidebar col-lg-4" role="navigation">
 	<?php
 		b4st_sidebar_before();
+		$post=get_post();
 		if (get_post_meta($post->ID, 'recent_posts_visible', false)){
 			$posts=get_posts(array(  'numberposts' => 10,
 							  'post_type'   => 'post',
