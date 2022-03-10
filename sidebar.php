@@ -10,7 +10,7 @@
 ?>
 
 <?php if( is_active_sidebar('sidebar-widget-area') ): ?>
-<div id="sidebar" class="sidebar col-lg-4 d-none d-sm-block" role="navigation">
+<div id="sidebar" class="sidebar col-lg-4 d-none d-md-block" role="navigation">
 	<?php
 		b4st_sidebar_before();
 		$post=get_post();
