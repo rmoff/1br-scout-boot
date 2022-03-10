@@ -19,11 +19,11 @@ function limit_posts_in_sidebar_to_chosen_categories($query)
 <?php if( is_active_sidebar('sidebar-widget-area') ): ?>
 <div id="sidebar" class="sidebar col-lg-4 d-none d-lg-block" role="navigation">
 	<?php
-		b4st_sidebar_before();
 		add_action('pre_get_posts', 'limit_posts_in_sidebar_to_chosen_categories');
+		b4st_sidebar_before();
 		dynamic_sidebar('sidebar-widget-area');
-		remove_action('pre_get_posts', 'limit_posts_in_sidebar_to_chosen_categories');
 		b4st_sidebar_after();
+		remove_action('pre_get_posts', 'limit_posts_in_sidebar_to_chosen_categories');
 	?>
 </div>
 <?php endif; ?>
