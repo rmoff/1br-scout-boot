@@ -21,7 +21,7 @@
 							  'category'   => implode(",",get_post_meta($post->ID, 'sidebar_categories', true))
 							));
 			?> 
-			<div class="card">
+			<div class="card p-2">
 				<H1>Recent Posts</H1>
 				<?php
 				foreach ($posts as $post){
