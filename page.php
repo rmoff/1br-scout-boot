@@ -15,7 +15,7 @@ b4st_main_before();
 
 		<?php get_template_part('content-column'); ?>
 
-		<div id="content" role="main">
+		<div id="content" role="main" class="push-md-4">
 			<?php get_template_part('loops/page-content'); ?>
 		</div><!-- /#content -->
 
