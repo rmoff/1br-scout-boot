@@ -36,6 +36,9 @@ function wpsb84532_create_metabox()
 }
 
 function wpsb84532_save_meta($post_id){
+  if($_POST['sidebar_active']){
+    update_post_meta($post_id,'sidebar_active',$_POST['sidebar_active']);
+  }
   if($_POST['sidebar_categories']){
     update_post_meta($post_id,'sidebar_categories',$_POST['sidebar_categories']);
   }
