@@ -14,8 +14,7 @@
 	<?php
 		b4st_sidebar_before();
 		$post=get_post();
-		echo "checking post attributes";
-		echo print_r(get_post_meta($post->ID, 'sidebar_categories', true),true);
+		dynamic_sidebar('sidebar-widget-area');
 		if (get_post_meta($post->ID, 'recent_posts_visible', true)==1){
 			$posts=get_posts(array(  'numberposts' => 10,
 							  'post_type'   => 'post',
@@ -29,7 +28,6 @@
 				<?php
 			}
 		}
-		dynamic_sidebar('sidebar-widget-area');
 		b4st_sidebar_after();
 	?>
 </div>
