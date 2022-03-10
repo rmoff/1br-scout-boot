@@ -13,6 +13,17 @@
 <div id="sidebar" class="sidebar col-lg-4" role="navigation">
 	<?php
 		b4st_sidebar_before();
+		if (get_post_meta($post->ID, 'recent_posts_visible', false)){
+			$posts=get_posts(array(  'numberposts' => 10,
+							  'post_type'   => 'post',
+							  'category'   => get_post_meta($post->ID, 'sidebar_categories', [])
+							));
+			foreach ($posts as $post){
+				?>
+				<h2><?php $post->title ?></h2>
+				<?php
+			}
+		}
 		dynamic_sidebar('sidebar-widget-area');
 		b4st_sidebar_after();
 	?>
