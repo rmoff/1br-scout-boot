@@ -42,13 +42,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse flex-wrap flex-row-reverse" id="navbarDropdown">
-
-				<div id="nav-extras" class="d-none d-lg-flex flex-row-reverse">
-					<!-- <?php b4st_navbar_search("ps-3"); ?> -->
-					<?php navbar_quick_links(); ?>
-					<?php b4st_navbar_profile("ps-3"); ?>
-				</div>
+			<div class="collapse navbar-collapse flex-wrap" id="navbarDropdown">
 
 				<?php
 				wp_nav_menu(array(
@@ -73,6 +67,12 @@
 					'walker'          => new b4st_walker_nav_menu_mobile()
 				));
 				?>
+
+				<div id="nav-extras" class="d-flex">
+					<!-- <?php b4st_navbar_search("ps-3"); ?> -->
+					<?php navbar_quick_links(); ?>
+					<?php b4st_navbar_profile("ps-3"); ?>
+				</div>
 
 			</div>
 
