@@ -37,10 +37,7 @@ a:hover {
 	color: inherit !important;
 }
 
-.editor-styles-wrapper .a:hover,
-.editor-styles-wrapper .a:hover span,
-.editor-styles-wrapper a:hover,
-.editor-styles-wrapper a:hover span {
+.a:hover *, a:hover * {
 	text-decoration-line: none !important;
 }
 
