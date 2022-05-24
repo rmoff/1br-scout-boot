@@ -90,6 +90,7 @@ a {
 a:hover {
     text-decoration: underline;
     text-decoration-color: inherit;
+	text-decoration-line: none !important;
 }
 
 .a:hover,
