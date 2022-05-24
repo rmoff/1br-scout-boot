@@ -12,7 +12,7 @@ b4st_main_before();
 	.full-width>img{ width: 100vh !important;}
 </style>
 
-<main id="site-main" class="container mt-5">
+<main id="site-main" class="container">
 	<div class="row">
 
 		<div id="content" role="main">
