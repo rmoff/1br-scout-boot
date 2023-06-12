@@ -121,7 +121,7 @@ function b4st_comment($comment, $args, $depth) {
    </section>
  <?php
    else :
-     if (comments_open()) :
+     if (comments_open() && is_user_logged_in() ) :
    echo '<section id="post-comments"><div class="comments-wrap"><p class="alert alert-info mt-4">' . __('Be the first to write a comment.', 'b4st') . '</p></div></section>';
      else :
        echo '<section id="post-comments"><div class="comments-wrap"><p class="alert alert-info">' . __('Comments are closed for this post.', 'b4st') . '</p></div></section>';

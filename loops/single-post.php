@@ -70,7 +70,7 @@
 
 <?php
   // This continues in the single post loop
-    if ( comments_open() || get_comments_number() ) :
+    if ( (comments_open() || get_comments_number()) && is_user_logged_in() ) :
       //comments_template();
       comments_template('/loops/single-post-comments.php');
 		endif;
