@@ -166,7 +166,7 @@ function b4st_comment($comment, $args, $depth) {
            <?php endif; ?>
 
            <div class="form-group mb-2">
-             <label for="comment"><?php _e('Your comment', 'b4st'); ?></label>
+             <label for="comment"><?php _e('Your comment. (Will be sent to leaders for moderation, and then it will only visible to leaders and other parents)', 'b4st'); ?></label>
              <textarea name="comment" class="form-control" id="comment" placeholder="<?php _e('Your comment', 'b4st'); ?>" rows="8" aria-required="true"></textarea>
            </div>
 
