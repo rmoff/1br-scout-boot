@@ -43,7 +43,7 @@
 
     <footer class="container mt-5 border-top pt-3">
 
-      <div class="author-bio media mt-5 bg-white rounded p-3 mb-2 shadow-sm">
+      <!-- <div class="author-bio media mt-5 bg-white rounded p-3 mb-2 shadow-sm">
         <?php b4st_author_avatar(); ?>
         <div class="media-body ms-3">
           <p class="h4 author-name"><?php _e('Author: ', 'b4st'); the_author_posts_link(); ?></p>
@@ -54,16 +54,16 @@
           } ?>
           <p class="author-other-posts mb-0"><?php _e('Other posts by ', 'b4st'); the_author_posts_link(); ?></p>
         </div>
-      </div><!-- /.author-bio -->
+      </div>/.author-bio -->
 
-      <div class="row mt-5 border-top pt-3 pb-5">
+      <!-- <div class="row mt-5 border-top pt-3 pb-5">
         <div class="col">
           <?php previous_post_link('%link', '<i class="bi bi-chevron-left"></i>Previous post: '.'%title'); ?>
         </div>
         <div class="col text-end">
           <?php next_post_link('%link', 'Next post: '.'%title'.'<i class="bi bi-chevron-right"></i>'); ?>
         </div>
-      </div>
+      </div> -->
 
     </footer>
   </article>
