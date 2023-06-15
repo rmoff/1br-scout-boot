@@ -24,14 +24,15 @@
             the_tags('Tags: ', ', ');
             _e(' / ', 'b4st');
           };
-        ?><a href="#post-comments"><?php
-          $comment_count = get_comments_number();
-          printf(
-            /* translators: 1: comment count number. */
-            esc_html( _nx( '%1$s comment', '%1$s comments', $comment_count, 'b4st' ) ),
-            number_format_i18n( $comment_count )
-          );
-        ?></a>
+        if(comments_open() && is_user_logged_in() ) { ?>
+          <a href="#post-comments"><?php
+            $comment_count = get_comments_number();
+            printf(
+              /* translators: 1: comment count number. */
+              esc_html( _nx( '%1$s comment', '%1$s comments', $comment_count, 'b4st' ) ),
+              number_format_i18n( $comment_count )
+            );?></a>
+        <?php } ?>
       </div>
     </header>
     <section class="entry-content clearfix">
